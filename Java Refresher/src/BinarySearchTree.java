@@ -7,6 +7,12 @@ public class BinarySearchTree {
 		root = null;
 	}
 
+	public void insert(int[] nums) {
+		for (int n : nums) {
+			insert(n);
+		}
+	}
+	
 	public void insert(int n) {
 		Node newNode = new Node(n);
 		
@@ -186,22 +192,8 @@ public class BinarySearchTree {
 		 *                  /
 		 *                 27 
 		 */
-		bst.insert(8);
-		bst.insert(2);
-		bst.insert(4);
-		bst.insert(17);
-		bst.insert(20);
-		bst.insert(48);
-		bst.insert(7);
-		bst.insert(19);
-		bst.insert(13);
-		bst.insert(36);
-		bst.insert(26);
-		bst.insert(11);
-		bst.insert(50);
-		bst.insert(1);
-		bst.insert(31);
-		bst.insert(27);
+		int[] list = {8, 2, 4, 17, 20, 48, 7, 19, 13, 36, 26, 11, 50, 1, 31, 27};
+		bst.insert(list);
 		
 		System.out.println("Original tree:");
 		bst.display(root);
