@@ -12,11 +12,12 @@ public class StringPalindrome {
 		sp.IsPalindromeIterative("bobby");
 		sp.IsPalindromeIterative("racecar");
 		sp.IsPalindromeIterative("grapes");
+		sp.IsPalindromeIterative("RaCeCaR");
 	}
 	
 	public boolean IsPalindromeIterative(String input) {
 		System.out.print("Checking to see if " + input + " is a palindrome iteratively...");
-		char[] inputChars = input.toCharArray();
+		char[] inputChars = input.toLowerCase().toCharArray();
 		
 		int left = 0;
 		int right = inputChars.length - 1;
