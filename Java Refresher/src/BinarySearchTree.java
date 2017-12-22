@@ -38,6 +38,22 @@ public class BinarySearchTree {
 	}
 	
 	public boolean find(int n) {
+		Node current = root;
+		
+		while (current != null) {
+			// If n is larger than current, go right
+			if (n > current.data) {
+				current = current.right;
+			} 
+			// If n is smaller than current, go left
+			else if (n < current.data) {
+				current = current.left;
+			}
+			// Else n equals current, we found it
+			else return true;
+		}
+		
+		// If we fell out of the loop, node isn't in tree
 		return false;
 	}
 	
@@ -78,6 +94,12 @@ public class BinarySearchTree {
 		
 		System.out.println("Original tree:");
 		bst.display(root);
+		
+		System.out.println("\nCheck if  4 is in tree: " + bst.find(4));
+		System.out.println("Check if 31 is in tree: " + bst.find(31));
+		System.out.println("Check if 47 is in tree: " + bst.find(47));
+		System.out.println("Check if 13 is in tree: " + bst.find(13));
+		System.out.println("Check if 51 is in tree: " + bst.find(51));
 	}
 	
 	public class Node {
