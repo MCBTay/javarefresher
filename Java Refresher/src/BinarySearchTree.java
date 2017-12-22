@@ -29,7 +29,7 @@ public class BinarySearchTree {
 			}
 		}
 		
-		// Check the parents data to ensure we insert on the correct side
+		// Check the parent's data to ensure we insert on the correct side
 		if (newNode.data > parent.data) {
 			parent.right = newNode;
 		} else if (newNode.data < parent.data) {
@@ -75,6 +75,23 @@ public class BinarySearchTree {
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
 		
+		/*  Initial tree structure
+		 *          8
+		 *       /      \ 
+		 *    2           17
+		 *   / \         /  \ 
+		 *  1   4      13    20
+		 *       \    /     /  \
+		 *        7  11   19    48
+		 *                     /  \
+		 *                   36    50
+		 *                  /
+		 *                26
+		 *                  \
+		 *                   31
+		 *                  /
+		 *                 27 
+		 */
 		bst.insert(8);
 		bst.insert(2);
 		bst.insert(4);
