@@ -47,7 +47,11 @@ public class BinarySearchTree {
 	}
 	
 	public void display(Node root) {
-
+		if (root != null) {
+			display(root.left);
+			System.out.print(" " + root.data);
+			display(root.right);
+		}
 	}
 	
 	static Node root;
@@ -55,6 +59,25 @@ public class BinarySearchTree {
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
 		
+		bst.insert(8);
+		bst.insert(2);
+		bst.insert(4);
+		bst.insert(17);
+		bst.insert(20);
+		bst.insert(48);
+		bst.insert(7);
+		bst.insert(19);
+		bst.insert(13);
+		bst.insert(36);
+		bst.insert(26);
+		bst.insert(11);
+		bst.insert(50);
+		bst.insert(1);
+		bst.insert(31);
+		bst.insert(27);
+		
+		System.out.println("Original tree:");
+		bst.display(root);
 	}
 	
 	public class Node {
