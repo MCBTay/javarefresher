@@ -11,16 +11,16 @@ public class StringReverse {
 	
 	public void reverseAllTheWays() {
 		System.out.println("Original string: " + myString);
-		reverseWithStringBuffer();
-		reverseIteratively();
-		reverseRecursively();
+		System.out.println("StringBuffer reverse: " + reverseWithStringBuffer());
+		System.out.println("Iterative reverse: " + reverseIteratively());
+		System.out.println("Recursive reverse: " + reverseRecursively());
 	}
 	
-	public void reverseWithStringBuffer() {
-		System.out.println("StringBuffer reverse: " + new StringBuffer(myString).reverse().toString());
+	public String reverseWithStringBuffer() {
+		return new StringBuffer(myString).reverse().toString();
 	}
 	
-	public void reverseIteratively() {
+	public String reverseIteratively() {
 		char[] chars = myString.toCharArray();
 		StringBuilder sb = new StringBuilder();
 		
@@ -28,10 +28,10 @@ public class StringReverse {
 			sb.append(chars[i]);
 		}
 		
-		System.out.println("Iterative reverse: " + sb.toString());
+		return sb.toString();
 	}
 	
-	public void reverseRecursively() {
+	public String reverseRecursively() {
 		
 	}
 	
