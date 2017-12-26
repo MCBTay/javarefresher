@@ -10,6 +10,20 @@ public class StringReverse {
 	}
 	
 	public void reverseAllTheWays() {
+		reverseWithStringBuffer();
+		reverseIteratively();
+		reverseRecursively();
+	}
+	
+	public void reverseWithStringBuffer() {
+		
+	}
+	
+	public void reverseIteratively() {
+		
+	}
+	
+	public void reverseRecursively() {
 		
 	}
 	
