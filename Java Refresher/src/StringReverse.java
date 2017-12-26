@@ -2,41 +2,38 @@
  * Class with various implementations of reversing strings
  */
 public class StringReverse {
-	
-	protected String myString;
-	
-	public StringReverse(String input) {
-		myString = input;
+
+	public void reverseAllTheWays(String input) {
+		System.out.println("Original string: " + input);
+		System.out.println("StringBuffer reverse: " + reverseWithStringBuffer(input));
+		System.out.println("Iterative reverse: " + reverseIteratively(input));
+		System.out.println("Recursive reverse: " + reverseRecursively(input));
 	}
 	
-	public void reverseAllTheWays() {
-		System.out.println("Original string: " + myString);
-		System.out.println("StringBuffer reverse: " + reverseWithStringBuffer());
-		System.out.println("Iterative reverse: " + reverseIteratively());
-		System.out.println("Recursive reverse: " + reverseRecursively());
+	public String reverseWithStringBuffer(String input) {
+		return new StringBuffer(input).reverse().toString();
 	}
 	
-	public String reverseWithStringBuffer() {
-		return new StringBuffer(myString).reverse().toString();
-	}
-	
-	public String reverseIteratively() {
-		char[] chars = myString.toCharArray();
+	public String reverseIteratively(String input) {
+		char[] chars = input.toCharArray();
 		StringBuilder sb = new StringBuilder();
 		
-		for (int i = myString.length() - 1; i >= 0; i--) {
+		for (int i = input.length() - 1; i >= 0; i--) {
 			sb.append(chars[i]);
 		}
 		
 		return sb.toString();
 	}
 	
-	public String reverseRecursively() {
+	public String reverseRecursively(String input) {
+		if (input.length() < 2) return input;
 		
+		return reverseRecursively(input.substring(1)) + input.charAt(0);
 	}
 	
 	public static void main (String[] args) {
-		StringReverse sr = new StringReverse("My cool string!");
-		sr.reverseAllTheWays();
+		StringReverse sr = new StringReverse();
+		sr.reverseAllTheWays("My cool string!");
+		sr.reverseAllTheWays("Bryan Taylor");
 	}
 }
