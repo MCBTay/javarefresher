@@ -3,7 +3,11 @@
  */
 public class StringIterator {
 
-	
+	public void iterate(String input) {
+		for (int i = 0, n = input.length(); i < n; i++) {
+			System.out.println(i + ": " + input.charAt(i));
+		}
+	}
 	
 	public static void main (String[] args) {
 		StringIterator si = new StringIterator();
