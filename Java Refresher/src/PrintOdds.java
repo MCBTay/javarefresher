@@ -6,7 +6,7 @@ public class PrintOdds {
 	public int print(int n)
 	{
 		int numOdds = 0;
-		if (n < 1) return -1;
+		if (n < 1) throw new IllegalArgumentException("Arguments must be non-zero and positive.");
 		
 		for (int i = 1; i <= n; i++) {
 			if (i % 2 == 1) {

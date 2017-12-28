@@ -7,26 +7,41 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class PrintOddsTest {
-
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
+	private PrintOdds testClass;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		testClass = new PrintOdds();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		testClass = null;
 	}
-
+	
 	@Test
-	void testPrint() {
-		fail("Not yet implemented");
+	void testPassingNegativeNumbers() {
+		assertThrows(IllegalArgumentException.class,
+				()->{
+					testClass.print(-50);
+	            });
+		
+		assertThrows(IllegalArgumentException.class,
+				()->{
+					testClass.print(-1);
+				});
+		
+		assertThrows(IllegalArgumentException.class,
+				()->{
+					testClass.print(-5);
+				});
 	}
-
+	
+	@Test
+	void testPassingZero() {
+		assertThrows(IllegalArgumentException.class,
+				()->{
+					testClass.print(0);
+				});
+	}
 }
