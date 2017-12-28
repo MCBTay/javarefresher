@@ -22,7 +22,7 @@ class PrintOddsTest {
 	}
 	
 	@Test
-	void testPassingNegativeNumbers() {
+	void testNegativeNumbers() {
 		assertThrows(IllegalArgumentException.class,
 				()->{
 					testClass.print(-50);
@@ -40,7 +40,7 @@ class PrintOddsTest {
 	}
 	
 	@Test
-	void testPassingZero() {
+	void testZero() {
 		assertThrows(IllegalArgumentException.class,
 				()->{
 					testClass.print(0);
@@ -48,7 +48,7 @@ class PrintOddsTest {
 	}
 	
 	@Test
-	void testPassingEleven() {
+	void testEleven() {
 		int numberOfOdds = testClass.print(11);
 		
 		assertEquals(6, numberOfOdds);
@@ -56,7 +56,7 @@ class PrintOddsTest {
 	}
 	
 	@Test
-	void testPassingFortyEight() {
+	void testFortyEight() {
 		int numberOfOdds = testClass.print(48);
 		
 		assertEquals(24,  numberOfOdds);
